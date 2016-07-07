@@ -1,0 +1,55 @@
+<html>
+
+<head>  
+<script src="canvasjs.min.js"></script>
+  <script type="text/javascript">
+  window.onload = function () {
+    var chart = new CanvasJS.Chart("chartContainer",
+    {
+      title:{
+      text: "Exam result"   
+      },
+      animationEnabled: true,
+      axisX:{
+        title: ""
+      },
+      axisY:{
+        title: "grades"
+      },
+      data: [
+      {        
+        type: "stackedColumn100",
+        name: "correct",
+        showInLegend: "true",
+        dataPoints: [
+        {  y: 40, label: "English"},
+        {  y: 10, label: "IQ" },
+       
+                       
+        ]
+      }, {        
+        type: "stackedColumn100",        
+        name: "un correct",
+        showInLegend: "true",
+        dataPoints: [
+        {  y: 20, label: "English"},
+        {  y: 14, label: "IQ" },
+        
+                
+        ]
+      }
+
+      ]
+    });
+
+    chart.render();
+  }
+  </script>
+ 
+
+</head>
+<body>
+  <div id="chartContainer" style="height: 300px; width: 100%;">
+  </div>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+	<!--	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css' />-->
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="Simple Template #2 from simpletemplates.org" />
+		<meta name="keywords" content="simple #2, template, simpletemplates.org" />
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<title>Exam Results</title>
+		<script src="jquery-1.11.3.js"></script>
+		<script src="jquery.countdownTimer.js"></script>
+		<link rel="stylesheet" type="text/css" href="jquery.countdownTimer.css" />
+		<script  src="canvasjs.min.js"></script>
+		
+	</head>
+	<body>
+		<Script>
+			/* ----------------------------------------------- salma/zeinab*/
+			// ------------------------------------------------------------
+			var EngTime;
+			var EngScore;
+			var EngTotal;
+			var EngDegree;
+			var EngStatus;
+
+			var IqTime;
+			var IqScore;
+			var IqTotal;
+			var IqDegree;
+			var IqStatus;
+
+			var htmlTxt;
+			
+
+			$(function()
+			{
+				EngTime = JSON.parse(sessionStorage.getItem("EngTime"));
+				EngScore = JSON.parse(sessionStorage.getItem("EngScore"));
+				EngTotal=JSON.parse(sessionStorage.getItem("EngTotal"));
+				EngDegree=Math.floor((EngScore/EngTotal)*100);
+
+				IqTime = JSON.parse(sessionStorage.getItem("IqTime"));
+				IqScore = JSON.parse(sessionStorage.getItem("IqScore"));
+				IqTotal=JSON.parse(sessionStorage.getItem("IqTotal"));
+				IqDegree=Math.floor((IqScore/IqTotal)*100);
+				
+				//check English
+				if(EngDegree>=60)
+				{
+					
+					EngStatus="pass";
+				}
+				else
+				{
+					EngStatus="fail";
+				}
+				//check IQ
+
+				if(IqDegree>=60)
+				{
+					
+					IqStatus="pass";
+				}
+				else
+				{
+					IqStatus="fail";
+				}
+
+
+
+				htmlTxt='<ul><li>EngStatus :'+ EngStatus+ '</li><li>English score:'+EngDegree+'</li><li>EngTime'
+				+EngTime+'</li><li>IqStatus'+IqStatus+'</li><li>Iqscore:'+IqDegree+'</li><li>IqTime:'+IqTime+'</li></ul>';
+				
+				$("#s").html(htmlTxt);
+
+				//chart 
+				var chart = new CanvasJS.Chart("chartContainer",
+			    {
+			      title:{
+			      text: "Exam result"   
+			      },
+			      animationEnabled: true,
+			      axisX:{
+			        title: ""
+			      },
+			      axisY:{
+			        title: "grades"
+			      },
+			      data: [
+			      {        
+			        type: "stackedColumn100",
+			        name: "correct",
+			        showInLegend: "true",
+			        dataPoints: [
+			        {  y: EngDegree, label: "English"},
+			        {  y: IqDegree, label: "IQ" },		       
+			                       
+			        ]
+			      }, {        
+			        type: "stackedColumn100",        
+			        name: "un correct",
+			        showInLegend: "true",
+			        dataPoints: [
+			        {  y: (100-EngDegree), label: "English"},
+			        {  y: (100-IqDegree), label: "IQ" },
+			        
+			                
+			        ]
+			      }
+
+			      ]
+			    });
+
+			    chart.render();
+			  
+
+			});
+				
+		</Script>
+
+		<div id="top">
+			<div id="header">
+				<h1>OnlineExaminationSystem</h1>
+			</div>
+			<div id="topmenu">
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">About Us</a></li>
+					<li><a href="#">What We Do</a></li>
+					<li><a href="#">The Team</a></li>
+					<li><a href="#">Contact Us</a></li>
+				</ul>
+			</div>
+
+			<div class="clear"> </div>
+		</div>
+
+		<div id="contentwrap">
+			<div class="cright">
+				<h1>Exam Results</h1>
+				<div id="s">
+				<ul>
+					<li>English:pass</li>
+					<li>English Degree:70</li>
+					<li>English time: 3:06</li>
+
+
+				</ul>
+				</div>
+				<div id="chartContainer" style="height: 300px; width: 400px;"></div>
+				
+				<div id="d"> 
+				
+				
+					
+
+				</div>
+
+			</div>
+			<div class="cleft">
+				<ul>
+					<li><a href="#">Practice IQ</a></li>
+					<li><a href="#">Practice English</a></li>
+					<li><a href="examIQ1bonus.html">Start Exam</a></li>
+				</ul>
+			</div>
+
+			<div class="clear"> </div>
+		</div>
+
+		<div id="footer">
+			<div class="left">
+				Copyright &copy; 2015 by SalmaZeinab
+			</div>
+			<div class="clear"> </div>
+		</div>
+	</body>
+</html>

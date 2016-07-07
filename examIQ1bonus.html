@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+	<!--	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css' />-->
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="Simple Template #2 from simpletemplates.org" />
+		<meta name="keywords" content="simple #2, template, simpletemplates.org" />
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<title>IQ Exam</title>
+		<script src="jquery-1.11.3.js"></script>
+		<script src="jquery.countdownTimer.js"></script>
+		<link rel="stylesheet" type="text/css" href="jquery.countdownTimer.css" />
+
+	</head>
+	<body>
+		<Script>
+			var Str = '{"Exam":{"Questions":[{"QuestionBody":"This is the body of a multiple choice-one answer question 1  ___________.","QuestionType":"1","Answers":["a: choice 1","b: choice 2","c: choice 3","d: choice 4","e: choice 5","f: choice 6","g: choice 7 A 5"],"CorrectAnswer":"7","grade":5},{"QuestionBody":"This is the body of a multiple choice-one answer question 2  ___________.","QuestionType":"1","Answers":["a: choice 1","b: choice 2","c: choice 3 A 5","d: choice 4","e: choice 5","f: choice 6"],"CorrectAnswer":"3","grade":5},{"QuestionBody":"This is the body of a multiple choice-one answer question 3  ___________.","QuestionType":"1","Answers":["a: choice 1","b: choice 2","c: choice 3","d: choice 4","e: choice 5 A 4"],"CorrectAnswer":"5","grade":4},{"QuestionBody":"This is the body of a multiple choice-one answer question 4  ___________.","QuestionType":"1","Answers":["a: choice 1","b: choice 2 A 3","c: choice 3","d: choice 4"],"CorrectAnswer":"2","grade":3},{"QuestionBody":"This is the body of a multiple choice-one answer question 5  ___________.","QuestionType":"1","Answers":["a: choice 1","b: choice 2","c: choice 3","d: choice 4 A 3","e: choice 5"],"CorrectAnswer":"4","grade":3},{"QuestionBody":"This is the body of a multiple choice-one answer question 6  ___________.","QuestionType":"1","Answers":["a: choice 1","b: choice 2","c: choice 3","d: choice 4","e: choice 5","f: choice 6 A 5","g: choice 7"],"CorrectAnswer":"6","grade":5},{"QuestionBody":"This is the body of a multiple choice-one answer question 7  ___________.","QuestionType":"1","Answers":["a: choice 1 A 2","b: choice 2","c: choice 3"],"CorrectAnswer":"1","grade":2},{"QuestionBody":"This is the body of a multiple choice-one answer question 8  ___________.","QuestionType":"1","Answers":["a: choice 1","b: choice 2 A 4","c: choice 3","d: choice 4","e: choice 5"],"CorrectAnswer":"2","grade":4},{"QuestionBody":"This is the body of a multiple choice-one answer question 9  ___________.","QuestionType":"1","Answers":["a: choice 1","b: choice 2","c: choice 3 A 2","d: choice 4","e: choice 5"],"CorrectAnswer":"3","grade":2},{"QuestionBody":"This is the body of a multiple choice-one answer question 10  ___________.","QuestionType":"1","Answers":["a: choice 1","b: choice 2","c: choice 3","d: choice 4","e: choice 5 A 4"],"CorrectAnswer":"5","grade":4},{"QuestionBody":"This is the body of a multiple choice-one answer question 11  ___________.","QuestionType":"1","Answers":["a: choice 1","b: choice 2 A 3","c: choice 3"],"CorrectAnswer":"2","grade":3},{"QuestionBody":"This is the body of a multiple choice-one answer question 12  ___________.","QuestionType":"1","Answers":["a: choice 1","b: choice 2","c: choice 3","d: choice 4 A 5"],"CorrectAnswer":"4","grade":5},{"QuestionBody":"This is the body of a multiple choice-one answer question 13  ___________.","QuestionType":"1","Answers":["a: choice 1 A 1","b: choice 2"],"CorrectAnswer":"1","grade":1},{"QuestionBody":"This is the body of a multiple choice-one answer question 14  ___________.","QuestionType":"1","Answers":["a: choice 1","b: choice 2 A 4","c: choice 3","d: choice 4","e: choice 5"],"CorrectAnswer":"2","grade":4},{"QuestionBody":"This is the body of a multiple choice-one answer question 15  ___________.","QuestionType":"1","Answers":["a: choice 1","b: choice 2","c: choice 3","d: choice 4","e: choice 5 A 3","f: choice 6","g: choice 7"],"CorrectAnswer":"5","grade":3},{"QuestionBody":"This is the body of a multiple choice-multiple answers question 1  ___________.","QuestionType":"2","Answers":["a: choice 1","b: choice 2 A 1","c: choice 3 A 2","d: choice 4","e: choice 5 A 2","f: choice 6 A 1","g: choice 7 A 3"],"CorrectAnswer":["2","3","5","6","7"],"grade":[1,2,2,1,3]},{"QuestionBody":"This is the body of a multiple choice-multiple answers question 2  ___________.","QuestionType":"2","Answers":["a: choice 1 A 3","b: choice 2","c: choice 3 A 4","d: choice 4","e: choice 5","f: choice 6","g: choice 7 A 5"],"CorrectAnswer":["1","3","7"],"grade":[3,4,5]},{"QuestionBody":"This is the body of a multiple choice-multiple answers question 3  ___________.","QuestionType":"2","Answers":["a: choice 1","b: choice 2 A 1","c: choice 3 A 3","d: choice 4","e: choice 5"],"CorrectAnswer":["2","3"],"grade":[1,3]},{"QuestionBody":"This is the body of a multiple choice-multiple answers question 4  ___________.","QuestionType":"2","Answers":["a: choice 1 A 4","b: choice 2","c: choice 3","d: choice 4 A 2","e: choice 5 A 3"],"CorrectAnswer":["1","4","5"],"grade":[4,2,3]},{"QuestionBody":"This is the body of a multiple choice-multiple answers question 5  ___________.","QuestionType":"2","Answers":["a: choice 1 A 4","b: choice 2","c: choice 3 A 2","d: choice 4","e: choice 5 A 3","f: choice 6"],"CorrectAnswer":["1","3","5"],"grade":[4,2,3]},{"QuestionBody":"This is the body of a multiple choice-multiple answers question 6  ___________.","QuestionType":"2","Answers":["a: choice 1","b: choice 2 A 3","c: choice 3","d: choice 4 A 2","e: choice 5 A 1","f: choice 6 A 1"],"CorrectAnswer":["2","4","5","6"],"grade":[3,2,1,1]},{"QuestionBody":"This is the body of a multiple choice-multiple answers question 7  ___________.","QuestionType":"2","Answers":["a: choice 1 A 3","b: choice 2","c: choice 3 A 2","d: choice 4 A 2"],"CorrectAnswer":["1","3","4"],"grade":[3,2,2]},{"QuestionBody":"This is the body of a multiple choice-multiple answers question 8  ___________.","QuestionType":"2","Answers":["a: choice 1","b: choice 2 A 4","c: choice 3 A 2","d: choice 4"],"CorrectAnswer":["2","3"],"grade":[4,2]},{"QuestionBody":"This is the body of a multiple choice-multiple answers question 9  ___________.","QuestionType":"2","Answers":["a: choice 1","b: choice 2 A 3","c: choice 3 A 2"],"CorrectAnswer":["2","3"],"grade":[3,2]},{"QuestionBody":"This is the body of a multiple choice-multiple answers question 10  ___________.","QuestionType":"2","Answers":["a: choice 1 A 3","b: choice 2 A 2","c: choice 3 A 2"],"CorrectAnswer":["1","2","3"],"grade":[3,2,2]},{"QuestionBody":"This is the body of a multiple choice-multiple answers question 11  ___________.","QuestionType":"2","Answers":["a: choice 1 A 2","b: choice 2","c: choice 3 A 3","d: choice 4 A 2","e: choice 5 A 1","f: choice 6 A 1","g: choice 7 A 2"],"CorrectAnswer":["1","3","4","5","6","7"],"grade":[2,3,2,1,1,2]},{"QuestionBody":"This is the body of a multiple choice-multiple answers question 12 ___________.","QuestionType":"2","Answers":["a: choice 1 A 2","b: choice 2 A 3","c: choice 3","d: choice 4 A 1","e: choice 5","f: choice 6 A 2"],"CorrectAnswer":["1","2","4","6"],"grade":[2,3,1,2]},{"QuestionBody":"This is the body of a multiple choice-multiple answers question 13  ___________.","QuestionType":"2","Answers":["a: choice 1","b: choice 2 A 3","c: choice 3 A 3","d: choice 4 A 2","e: choice 5"],"CorrectAnswer":["2","3","4"],"grade":[3,3,2]},{"QuestionBody":"This is the body of a multiple choice-multiple answers question 14  ___________.","QuestionType":"2","Answers":["a: choice 1 A 3","b: choice 2","c: choice 3","d: choice 4 A 4"],"CorrectAnswer":["1","4"],"grade":[3,4]},{"QuestionBody":"This is the body of a multiple choice-multiple answers question 15  ___________.","QuestionType":"2","Answers":["a: choice 1 A 4","b: choice 2","c: choice 3 A 2"],"CorrectAnswer":["1","3"],"grade":[4,2]}]}}';
+
+			var obj=JSON.parse(Str);
+			var exam=obj.Exam;
+			var fbtn,nbtn,lbtn,pbtn,main_div;
+			var index=0;
+			var HTMLtxt;
+			//var user_answers;//stores the value of the radio button the user choosen it as his answer
+			var user_answer;
+			var score;// will define english &iq &total score
+			var count=0;// count correct answer
+			//random		
+			var Qu=exam.Questions;//question array from JSON
+			var choosenQ=[];//random
+			var Q=[];//random questions
+			var correct=[]; //correct answer array
+			var numQ = 30;
+			//timer vraible
+			var split=[];
+			var minutes ;
+			var seconds;
+			var IqTime;
+			var IqScore;
+			//total IqScore variable
+				var IqScore=0;
+				var IqTotal=0;
+			// ----------------------------------------------- salma ------------------------------------------------------------
+
+			function skipQ()
+				{
+					if($('input[name=answer]').filter(':checked').length == 0) // skipped ... user didn't choose an answer
+					{
+						if ($('#selSkip').find('option[value='+ index +']').length == 0) //question name does not exist in the list so add it
+						{
+							$("#selSkip").append("<option value="+ index +">Q"+ (parseInt(index)+parseInt(1)) +"</option>");
+						}
+					}
+					else
+					{
+						if ($('#selSkip').find('option[value='+ index +']').length != 0) // question name exist in the list then remove it
+						{
+							$('#selSkip option[value='+ index +']').remove();
+						}
+					}
+				}
+
+			function markQ()
+			{
+				$('#chbMark').prop('checked',false);
+				if ($('#selMark').find('option[value='+ index +']').length != 0)
+					{	
+							$('#chbMark').prop('checked',true);
+					}
+			}
+
+			function displayAnswer()
+			{
+				$('input[name=answer]').each(function()
+				{
+					if(user_answer[index].includes($(this).val()))
+					{
+						$(this).prop('checked',true);
+					}
+				});
+			}
+
+			function nextPage()
+			{
+				// ----- zeinab ----
+				
+			 	/*
+			 		ADD HER THE CODE OR CALL THE FUNCTION THAT DO FOLLOWING:
+			 			* calculate the amount of time taken to finish this exam. Store it in the IqTime variable
+			 			* calculate the user's total score. Store it in the IqScore variable
+			 	*/
+
+			 	//----- salma zeinab -----
+				total_score();
+				sessionStorage.setItem("IqScore",JSON.stringify(IqScore));
+				sessionStorage.setItem("IqTotal",JSON.stringify(IqTotal));
+				
+				window.location.href="examEnglish.html";
+			}
+			// ----------------------------------------------- zeinab ------------------------------------------------------
+			function timeUp() 
+			{
+        	//Code to be executed when timer expires.
+        		nextPage();
+       		}
+       		function total_score(){
+	       		 	var count=0;// to check #of correct answer
+	       		 	console.log("total_score")
+	       		 	$.each(choosenQ, function( i, value ){       		 	
+	       		 			if(Qu[choosenQ[i]].QuestionType == '1')// radio button with only one answer
+	       		 			{
+	       		 				IqTotal+=Qu[choosenQ[i]].grade;
+	       		 				if(Qu[choosenQ[i]].CorrectAnswer == user_answer[i][0])
+	       		 					IqScore+= Qu[choosenQ[i]].grade;
+	       		 			}
+	       		 			else// type =check boxes
+	       		 			{    
+	       		 				//to calculate total grades     		 				
+	       		 				$.each(Qu[choosenQ[i]].grade,function(index,el) {
+	       		 					IqTotal+=el;
+	       		 					
+	       		 				});
+	       		 				$.each(user_answer[i],function(index, val) {
+	       		 					if (Qu[choosenQ[i]].CorrectAnswer[index]==val){
+	       		 						count++;
+	       		 						correct.push(Qu[choosenQ[i]].grade[index]);
+	       		 					}
+	       		 				});
+
+	       		 				if (count==Qu[choosenQ[i]].grade.length)// st answer all correct choise
+	       		 				{
+	       		 					$.each(Qu[choosenQ[i]].grade, function(index, val) {
+	       		 					
+	       		 						 IqScore+=val;
+	       		 					});
+	       		 				}
+	       		 				else if (count==user_answer[i].length)// st  all answers are correct but less than correct aviable 
+	       		 				{
+	       		 					$.each(correct, function(index, val) {
+	       		 						 IqScore+=val;
+	       		 					});
+	       		 				}
+	       		 			}	
+	       		 			console.log("IqScore: " + IqScore);
+	       		 });
+				}
+
+			
+			$(function(){
+					$("#time_span").countdowntimer(
+					{
+						minutes:10,
+						size:"lg",
+						pauseButton:"res",
+						timeUp:timeUp,// function when timer is expire
+						
+					});
+			
+				user_answer = new Array();
+				for (i = 0; i < numQ; i++) 
+				{
+  					user_answer[i] = new Array();
+				}
+
+				random();
+				
+				$("#st").click(function() {
+					skipQ();
+					index=0;
+					print(index);
+				});
+
+				$("#nxt").click(function() {
+					skipQ();
+					index++;
+					
+					if(index==numQ)
+						index=0;
+					print(index);
+						
+				});
+
+				$("#pr").click(function() {
+					skipQ();
+					index--;
+				
+					if(index<0)
+						index=numQ-1;
+
+					print(index);
+				});
+
+				$("#last").click(function(event) {
+					/* Act on the event */
+				
+					skipQ();
+					index=numQ-1;
+					print(index);
+				});
+				
+				main_div=document.getElementById("d");
+				print(index);
+
+				$("#res").click(function()
+				 {				
+	            	split = $("#time_span")[0].innerText.split(":");
+				 	minutes =  (9-Number(split[0]));
+				 	seconds = (60-Number(split[1]));
+				 	IqTime=minutes+":"+seconds;
+				 	sessionStorage.setItem("IqTime",JSON.stringify(IqTime));
+				 	nextPage();	
+
+				//	alert("score  "+Math.floor(100*count/choosenQ.length)+"%");
+				});
+				
+
+				//------------------------------------------------------ salma -----------------------------------------------------
+				$("#chbMark").click(function()
+				{
+					if($(this).is(":checked"))//marking
+					{
+					
+						$("#selMark").append("<option value="+ index +">Q"+ (parseInt(index)+parseInt(1)) +"</option>");
+
+					}
+					else//unmarking
+					{
+						$('#selMark option[value='+ index +']').remove();
+					}
+				});
+
+				$('#d').delegate('input[name=answer]','click',function()
+				{
+					var i=0;
+					$('input[name=answer]:checked').each(function()
+					{
+						user_answer[index][i] = $(this).val();
+						i++;
+					});
+					while(user_answer[index][i] != undefined)
+					{
+						user_answer[index][i] = undefined;
+						i++;
+					}
+				});
+
+
+				$('#selMark').click(function(){
+					index= $("#selMark option").filter(":selected")[0].value;
+					if ($('#selMark').find('option[value='+ index +']').length != 0)
+					{
+							$('#chbMark').prop('checked',true);
+							print(index);
+					}	
+						
+				});		
+
+				$('#selSkip').click(function(){
+					index= $("#selSkip option").filter(":selected")[0].value;
+					if ($('#selSkip').find('option[value='+ index +']').length != 0)
+					{
+							$('#chbMark').prop('checked',true);
+							print(index);
+					}	
+					
+				});
+			});		 
+			
+			//--------------------------------------------------- zeinb -----------------------------------------------------
+			function print(index)
+			{
+				var val = 1;
+				var Qes= Qu[choosenQ[index]];
+
+				var HTMLtxt= "<h2> Question "+(parseInt(index)+(1))+" </h2>";
+				HTMLtxt+= "<p> "+ Qes.QuestionBody +"</p>";
+				HTMLtxt+= '<ul>';
+
+				if(Qes.QuestionType == '1')
+				{
+					for(i=0;i<Qes.Answers.length;i++)
+					{
+						HTMLtxt+= '<li> <input type="radio" value="'+ parseInt(parseInt(i)+parseInt(1)) +'" name="answer"/><span> '+ Qes.Answers[i]+'</span> </li>';
+					}	
+				}
+				else
+				{
+					for(i=0;i<Qes.Answers.length;i++)
+					{
+						HTMLtxt+= '<li> <input type="checkbox" value="'+ parseInt(parseInt(i)+parseInt(1)) +'" name="answer"/><span> '+ Qes.Answers[i]+'</span> </li>';
+					}
+				}
+				HTMLtxt+="</ul>";
+				main_div.innerHTML=HTMLtxt;
+				displayAnswer();
+				markQ();
+			}
+			//random questions
+			function random()
+			{			
+				var counter=0;
+	            do
+	            {
+	                var r=Math.floor(Math.random()*numQ);
+	                if(check(choosenQ,r)) 
+	                    {
+	                        choosenQ.push(r);
+			              counter++;
+	                    }
+	           	}while(counter!=numQ);
+	            function check(choosenQ,r)
+	            {
+	                flage=true;
+	                for(i=0;i<choosenQ.length;i++)
+	                    { 
+	                        if(choosenQ[i]==r)
+	                            flage=false;                        
+	                    }
+	                return flage;
+	            }
+	               
+	        }
+		</Script>
+
+		<div id="top">
+			<div id="header">
+				<h1>OnlineExaminationSystem</h1>
+			</div>
+			<div id="topmenu">
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">About Us</a></li>
+					<li><a href="#">What We Do</a></li>
+					<li><a href="#">The Team</a></li>
+					<li><a href="#">Contact Us</a></li>
+				</ul>
+			</div>
+
+			<div class="clear"> </div>
+		</div>
+
+		<div id="contentwrap">
+			<div class="cright">
+				<!--<img src='study_group.jpg' style="width:100%; height:300px; margin-top:10px;"/>-->
+				<h1>IQ Exam</h1>
+				<div id="d"></div>
+				<hr>
+				<input type="button" value="first" id="st"/>
+				<input type="button" value="previous" id="pr"/>
+				<input type="button" value="next" id="nxt"/>
+				<input type="button" value="last" id="last"/>	
+			</div>
+			<div id="timer"> <span id="time_span"></div>
+			<div class="cleft">
+			
+				<label>marked questions</label>
+				<select id="selMark"></select>
+
+				<label>skipped questions</label>
+				<select id="selSkip"></select>
+				<input type="checkbox" id="chbMark">mark
+				<input type="button" value="finish" id="res"/>
+			</div>
+
+			<div class="clear"> </div>
+		</div>
+
+		<div id="footer">
+			<div class="left">
+				Copyright &copy; 2015 by SalmaZeinab
+			</div>
+			<div class="clear"> </div>
+		</div>
+	</body>
+</html>

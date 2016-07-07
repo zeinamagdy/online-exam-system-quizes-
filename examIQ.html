@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+	<!--	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css' />-->
+
+
+
+
+
+
+
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="Simple Template #2 from simpletemplates.org" />
+		<meta name="keywords" content="simple #2, template, simpletemplates.org" />
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<title>IQ Exam</title>
+		<script src="jquery-1.11.3.js"></script>
+	</head>
+	<body>
+		<Script>
+			var Str = '{"Exam":{"Questions":[{"QuestionBody":"The major language of World Wide Web is ___________.","QuestionType":"1","Answers":["a: HTML","b: PHP","c: ASP.NET","d: Java"],"CorrectAnswer":"1"},{"QuestionBody":"HTML is an abbreviation for?.","QuestionType":"1","Answers":["a: HiTech Meaningful Language","b: HyperText Meaningful Language","c: HiTech Markup Language","d: HyperText Markup Language"],"CorrectAnswer":"4"},{"QuestionBody":"___________ is a device from where the information is sent.","QuestionType":"1","Answers":["a: Transmitter","b: Spreadsheet","c: Simulation","d: Modulation"],"CorrectAnswer":"1"},{"QuestionBody":"LAN is an abbreviation for?.","QuestionType":"1","Answers":["a: Large Access Network","b: Local Access Network","c: Large Area Network","d: Local Area Network"],"CorrectAnswer":"4"},{"QuestionBody":"URL is an abbreviation for?.","QuestionType":"1","Answers":["a: Universal Resource Locator","b: Uniform Resource Locator","c: Universal Resource Location","d: Uniform Resource Location"],"CorrectAnswer":"4"},{"QuestionBody":"FTP is an abbreviation for?.","QuestionType":"1","Answers":["a: File Transfer Position","b: File Transfer Protection","c: File Transfer Protocol","d: File Transfer Possibility"],"CorrectAnswer":"3"},{"QuestionBody":"IDE stands for?","QuestionType":"1","Answers":["a: Integrated Dual Environment","b: Inter Development Environment","c:Integrated Development Environment","d: Inter Dual Environment"],"CorrectAnswer":"3"}]}}';
+
+			var obj=JSON.parse(Str);
+			var exam=obj.Exam;
+			var fbtn,nbtn,lbtn,pbtn,main_div;
+			var index=0;
+			var HTMLtxt;
+			var user_answers=[];//stores the value of the radio button the user choosen it as his answer
+			var score;// will define english &iq &total score
+			var count=0;// count correct answer
+			//random		
+			var Qu=exam.Questions;//question array from JSON
+			var choosenQ=[];//random
+			var Q=[];//random questions
+			var correct=[]; //correct answer array
+			var numQ = 7;
+
+			function skipQ()
+				{
+					if($('input[name=answer]').filter(':checked').length == 0) // skipped ... user didn't choose an answer
+					{
+						if ($('#selSkip').find('option[value='+ index +']').length == 0) //question name does not exist in the list so add it
+						{
+							$("#selSkip").append("<option value="+ index +">Q"+ (parseInt(index)+parseInt(1)) +"</option>");
+						}
+					}
+					else
+					{
+						if ($('#selSkip').find('option[value='+ index +']').length != 0) // question name exist in the list then remove it
+						{
+							$('#selSkip option[value='+ index +']').remove();
+						}
+					}
+				}
+
+			function markQ()
+			{
+				$('#chbMark').prop('checked',false);
+				if ($('#selMark').find('option[value='+ index +']').length != 0)
+					{	
+							$('#chbMark').prop('checked',true);
+					}
+			}
+
+			function setAnswer()
+			{
+				user_answers[index]=$('input[name=answer]:checked').val();
+			}
+
+			function clearAnswer()
+			{
+				user_answers[index]= undefined;
+			}
+
+			function displayAnswer()
+			{
+				if(user_answers[index] != undefined)
+				{
+					$('input[name=answer][value='+ user_answers[index] +']').prop('checked',true);
+				}
+			}
+
+			onload=function()
+			{
+
+
+				random();
+				fbtn=document.getElementById("st");
+				fbtn.onclick=function()
+				{
+					skipQ();
+					index=0;
+					print(index);
+				}
+
+				nbtn=document.getElementById("nxt");
+				nbtn.onclick=function()
+				{
+					skipQ();
+					index++;
+					
+					if(index==numQ)
+						index=0;
+					print(index);
+						
+				}
+
+				pbtn=document.getElementById("pr");
+				pbtn.onclick=function()
+				{
+					skipQ();
+					index--;
+				
+					if(index<0)
+						index=numQ-1;
+
+					print(index);
+				}
+
+				lbtn=document.getElementById("last");
+				lbtn.onclick=function()
+				{
+					skipQ();
+					index=numQ-1;
+					print(index);
+				}
+				
+				main_div=document.getElementById("d");
+				print(index);
+				$("#res").click(function()
+				 {				
+	            	for(i=0;i<choosenQ.length;i++)
+	            	{
+	            		if(user_answers[i]==Qu[choosenQ[i]].CorrectAnswer)
+	            		{
+	            			count++;            		
+	            		}            	
+	            	}          	
+
+					alert("score  "+Math.floor(100*count/choosenQ.length)+"%");
+				});
+
+				//------------------------------------------------------ salma -----------------------------------------------------
+				$("#chbMark").click(function()
+				{
+					if($(this).is(":checked"))//marking
+					{
+					
+						$("#selMark").append("<option value="+ index +">Q"+ (parseInt(index)+parseInt(1)) +"</option>");
+
+					}
+					else//unmarking
+					{
+						$('#selMark option[value='+ index +']').remove();
+					}
+				});
+
+				$('#d').delegate('input[name=answer]','click',function(){
+					if($(this).is(":checked"))//marking
+					{
+						setAnswer();
+					}
+					else//unmarking
+					{
+						clearAnswer();
+					}
+				});
+
+				$('#selMark').click(function(){
+					index= $("#selMark option").filter(":selected")[0].value;
+					if ($('#selMark').find('option[value='+ index +']').length != 0)
+					{
+							$('#chbMark').prop('checked',true);
+							print(index);
+					}	
+						
+				});		
+
+				$('#selSkip').click(function(){
+					index= $("#selSkip option").filter(":selected")[0].value;
+					if ($('#selSkip').find('option[value='+ index +']').length != 0)
+					{
+							$('#chbMark').prop('checked',true);
+							print(index);
+					}	
+					
+				});
+			}		 
+			
+			///////////////////////////////////////////////////////////////////////////
+			function print(index)
+			{
+				var Qes= Qu[choosenQ[index]];
+				var HTMLtxt= "<h2> Question "+(parseInt(index)+(1))+" </h2>";
+						HTMLtxt+= "<p> "+ Qes.QuestionBody +"</p>";
+						HTMLtxt+= '<ul>';
+						HTMLtxt+= '<li> <input type="checkbox" value="1" name="answer"/><span> '+ Qes.Answers[0]+'</span> </li>';
+						HTMLtxt+= '<li> <input type="checkbox" value="2" name="answer"/><span> '+ Qes.Answers[1]+' </span> </li>';
+						HTMLtxt+= '<li> <input type="checkbox" value="3" name="answer"/><span> '+Qes.Answers[2]+'</span> </li>';
+						HTMLtxt+= '<li> <input type="checkbox" value="4" name="answer"/><span> '+Qes.Answers[3]+'</span> </li>';
+						HTMLtxt+="</ul>";
+					main_div.innerHTML=HTMLtxt;
+					displayAnswer();
+					markQ();
+			}
+			//random questions
+			function random()
+			{			
+				var counter=0;
+	            do
+	            {
+	                var r=Math.floor(Math.random()*numQ);
+	                if(check(choosenQ,r)) 
+	                    {
+	                        choosenQ.push(r);
+			              counter++;
+	                    }
+	           	}while(counter!=numQ);
+	            function check(choosenQ,r)
+	            {
+	                flage=true;
+	                for(i=0;i<choosenQ.length;i++)
+	                    { 
+	                        if(choosenQ[i]==r)
+	                            flage=false;                        
+	                    }
+	                return flage;
+	            }
+	               
+	        }
+		</Script>
+
+		<div id="top">
+			<div id="header">
+				<h1>OnlineExaminationSystem</h1>
+			</div>
+			<div id="topmenu">
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">About Us</a></li>
+					<li><a href="#">What We Do</a></li>
+					<li><a href="#">The Team</a></li>
+					<li><a href="#">Contact Us</a></li>
+				</ul>
+			</div>
+
+			<div class="clear"> </div>
+		</div>
+
+		<div id="contentwrap">
+			<div class="cright">
+				<!--<img src='study_group.jpg' style="width:100%; height:300px; margin-top:10px;"/>-->
+				<h1>IQ Exam</h1>
+				<div id="d"></div>
+				<hr>
+				<input type="button" value="first" id="st"/>
+				<input type="button" value="previous" id="pr"/>
+				<input type="button" value="next" id="nxt"/>
+				<input type="button" value="last" id="last"/>	
+			</div>
+			<div class="cleft">
+				<label>marked questions</label>
+				<select id="selMark"></select>
+
+				<label>skipped questions</label>
+				<select id="selSkip"></select>
+				<input type="checkbox" id="chbMark">mark
+				<input type="button" value="result" id="res"/>
+			</div>
+
+			<div class="clear"> </div>
+		</div>
+
+		<div id="footer">
+			<div class="left">
+				Copyright &copy; 2015 by SalmaZeinab
+			</div>
+			<div class="clear"> </div>
+		</div>
+	</body>
+</html>
